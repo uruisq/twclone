@@ -1,0 +1,10 @@
+<h2>以下の内容で、twする。</h2>
+
+<%= form_with(model: @tw, url: tws_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  
+  <p>本文：<%= @tw.content %></p>
+  <%= form.submit "twする" %>
+  <br>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
