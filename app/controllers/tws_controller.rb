@@ -1,6 +1,10 @@
 class TwsController < ApplicationController
   before_action :set_tw, only: [:show, :edit, :update, :destroy]
 
+  def top
+    render file: 'public/top.html', layout: false, content_type: 'text/html'
+  end
+
   def index
     @tws = Tw.all
   end
@@ -48,13 +52,14 @@ end
     render :new if @tw.invalid?
   end
 
-  private
+private
 
-  def tw_params
-    params.require(:tw).permit(:content)
-  end
+def tw_params
+  params.require(:tw).permit(:content)
+end
 
-  def set_tw
-    @tw = Tw.find(params[:id])
-  end
+def set_tw
+  @tw = Tw.find(params[:id])
+end
+
 end

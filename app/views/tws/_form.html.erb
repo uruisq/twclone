@@ -1,21 +1,31 @@
 <%= form_with(model: @tw, local: true, url: choose_new_or_edit ) do |form| %>
   <% if @tw.errors.any? %>
-  <div id="error_explanation">
-  <h2><%= @tw.errors.count %>件のエラーがあります。</h2>
-  <ul>
-  <% @tw.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-    </ul>
+    <div id="error_explanation">
+      <h2><%= @tw.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @tw.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 
-  <div class="tw_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="tw_contents scroll">
+    <div class="tw_block">
+      <figure>
+        <%= image_tag '/icon.png' %>
+      </figure>
+      <div class="tw_block-text">
+        <div class="name">tw廃<span class="name_reply">@rock_tango</span>
+        </div>
+        <div class="date">
+        </div>
+        <div class="text"><%= form.text_area :content, size: "40x10" %><br>
+        <%= form.submit %>
+        </div>
+        <div class="tw_icon">
+        </div>
+      </div>
+    </div>
   </div>
-  <%= form.submit %>
 <% end %>
-
-<br>
-<%= link_to "tw一覧画面にもどる", tws_path %>

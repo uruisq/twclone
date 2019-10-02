@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/* twitter風 */
+.tw_container {
+  padding: 0;
+  background: #ffffff;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 20px auto;
+  font-size: 80%;
+  border: solid 1px #eeeeee;
+}
+
+.tw_container a {
+  color: #58aeed;
+}
+
+/* タイトル部分 */
+.tw_container .tw_title {
+  background: #58aeed;
+  padding: 10px;
+  text-align: center;
+  font-size: 150%;
+  color: #ffffff;
+}
+
+.tw_container .tw_title .tw-logo {
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url(/tw-logo.svg) center no-repeat;
+}
+
+.tw_container .tw_title span {
+  font-size: 20px;
+}
+
+/* タイムライン部分 */
+.tw_container .tw_contents {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
+}
+
+.tw_container .tw_contents.scroll {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+.tw_container .tw_block {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-bottom: solid 1px #eeeeee;
+  overflow: hidden;
+}
+
+.tw_container .tw_block:last-child {
+  border-bottom: solid 0px;
+}
+/* アイコン画像 */
+.tw_container .tw_block figure {
+  width: 50px;
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 50px;
+}
+  /* 正方形を用意 */
+.tw_container .tw_block figure img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+/* コメントエリア */
+.tw_container ._block-text {
+  margin: 0;
+  position: relative;
+  margin-left: 60px;
+  padding-right: 10px;
+}
+
+.tw_container .tw_block-text .name {
+  float: left;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.tw_container .tw_block-text .name .name_reply {
+  color: #8a9aa4;
+  margin-left: 10px;
+}
+
+.tw_container .tw_block-text .date {
+  position: relative;
+  top: 0;
+  right: 20px;
+  text-align: right;
+  color: #8a9aa4;
+}
+/* 本文 */
+.tw_container .tw_block-text .text {
+  margin-left: 45px;
+  padding: 15px;
+}
+
+/* 埋め込みアイコン */
+.tw_container .tw_icon br{
+  display: none;
+}
+
+.tw_container .tw_icon .tw-indi {
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding-left: 20px;
+  background: url("/tw-indi.svg") left no-repeat;
+  width: 5%;
+  float: right;
+  color: #8a9aa4;
+}
+
+.tw_container .tw_icon .tw-edit {
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding-left: 20px;
+  background: url("/tw-edit.svg") left no-repeat;
+  width: 5%;
+  float: right;
+  color: #8a9aa4;
+}
+
+.tw_container .tw_icon .tw-delete {
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding-left: 20px;
+  background: url("/tw-delete.svg") left no-repeat;
+  width: 5%;
+  float: right;
+  color: #8a9aa4;
+}

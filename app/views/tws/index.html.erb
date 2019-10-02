@@ -1,23 +1,30 @@
-<h1>ブログ一覧</h1>
+<div class="tw_container">
 
-<p><%= notice %></p>
+<!-- タイトル -->
+  <div class="tw_title">
+    <%= link_to("", new_tw_path, {class: "tw-logo"}) %>
+  </div>
 
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
-
-<% @tws.each do |tw| %>
-  <tr>
-    <td><%= tw.content %></td>
-
-    <td><%= link_to '詳細を確認する', tw_path(tw.id) %></td>
-    <td><%= link_to 'twを編集する', edit_tw_path(tw.id), data:{ confirm: 'twを編集していいですか？' } %></td>
-    <td><%= link_to 'twを削除する', tw_path(tw.id), method: :delete, data: { confirm: 'twを削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br>
-
-<%= link_to '新しくブログを投稿する', new_tw_path %>
+<!-- タイムライン -->
+  <div class="tw_contents scroll">
+    <% @tws.reverse.each do |tw| %>
+    <div class="tw_block">
+      <figure>
+        <%= image_tag '/icon.png' %>
+      </figure>
+      <div class="tw_block-text">
+        <div class="name">tw廃<span class="name_reply">@rock_tango</span>
+        </div>
+        <div class="date"><%= time_ago_in_words(tw.updated_at) %>
+        </div>
+        <div class="text"><%= tw.content %><br>
+        </div>
+        <div class="tw_icon">
+          <%= link_to("", tw_path(tw.id), method: :delete, class: "tw-delete", data: { confirm: '本当に削除していいですか？' }) %>
+          <%= link_to("", edit_tw_path(tw.id), class: "tw-edit", data:{ confirm: '本当に編集していいですか？' }) %>
+          <%= link_to("", tw_path(tw.id), {class: "tw-indi"}) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
